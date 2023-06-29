@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    """A list of lists of integers repr the Pascal"""
     if n <= 0:
         return []
 
