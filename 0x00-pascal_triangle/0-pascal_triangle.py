@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """a function to create pascal triangle"""
 
+
 def pascal_triangle(n):
 
     # Make sure it is a positive int
