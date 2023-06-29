@@ -4,10 +4,10 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-# Initialize a variable pascal as a list of lists
+    # Initialize a variable pascal as a list of lists
     pascal = [[1]]
 
-# Loop generates the remaining rows after row '[1]'
+    # Loop generates the remaining rows after row '[1]'
     for i in range(1, n):
         last_row = pascal[i - 1]
         this_row = [1]
