@@ -1,6 +1,6 @@
 def pascal_triangle(n):
 
-# Make sure it is a positive int
+    # Make sure it is a positive int
     if n <= 0:
         return []
 
