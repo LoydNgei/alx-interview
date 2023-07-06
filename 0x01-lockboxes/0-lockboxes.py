@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Write a method that determines if all the boxes can be opened """
 
+
 def canUnlockAll(boxes):
     if len(boxes) == 0:
         return True
@@ -14,10 +15,11 @@ def canUnlockAll(boxes):
 
         # Iterate through the keys obtained so far
         for key in keys:
-            # Check if the key unlocks a new box and if that box is not already visited
+            # Check if the key unlocks a new box
             if key < len(boxes) and key not in checked:
                 checked.add(key)
-                new_keys.update(boxes[key])  # Add the keys in the newly opened box
+                # Add the keys in the newly opened box
+                new_keys.update(boxes[key])
 
         keys = new_keys  # Update the keys obtained in this iteration
 
