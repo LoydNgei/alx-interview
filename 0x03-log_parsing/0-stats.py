@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""a script that reads stdin line by line and computes metrics"""
+"""This module contains the solution for the log parsing problem"""
 from sys import stdin
 
 
 def print_status_codes(code, file_size):
     """Prints the status code with its count.
+    Format:
+        <status>: <count>
     """
     print("File size: {}".format(file_size))
     for key, val in code.items():
