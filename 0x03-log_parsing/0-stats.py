@@ -9,9 +9,10 @@ def print_status_codes(status_counts, total_file_size):
         <status>: <count>
     """
     print("Total file size: {}".format(total_file_size))
-    for status, count in status_counts.items():
+    for status, count in sorted(status_counts.items()):
         print("{}: {}".format(status, count))
 
+BATCH_SIZE = 10
 status_counts = {}
 total_file_size = 0
 line_count = 0
@@ -21,20 +22,17 @@ try:
         parts = line.split()
         file_size = int(parts[-1])
         total_file_size += file_size
-        status = parts[-2]
+        status = int(parts[-2])
 
-        if status.isdigit():
-            status = int(status)
-            if status in [200, 301, 400, 401, 403, 404, 405, 500]:
-                if status not in status_counts:
-                    status_counts[status] = 1
-                else:
-                    status_counts[status] += 1
+        if status in [200, 301, 400, 401, 403, 404, 405, 500]:
+            status_counts[status] = status_counts.get(status, 0) + 1
 
         line_count += 1
 
-        if line_count % 10 == 0:
+        if line_count % BATCH_SIZE == 0:
             print_status_codes(status_counts, total_file_size)
+            status_counts = {}
+            total_file_size = 0
 
 except KeyboardInterrupt:
     print_status_codes(status_counts, total_file_size)
