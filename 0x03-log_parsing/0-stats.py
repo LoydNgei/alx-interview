@@ -12,6 +12,7 @@ def print_status_codes(status_counts, total_file_size):
     for status, count in sorted(status_counts.items()):
         print("{}: {}".format(status, count))
 
+
 BATCH_SIZE = 10
 status_counts = {}
 total_file_size = 0
