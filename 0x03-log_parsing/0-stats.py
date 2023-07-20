@@ -2,6 +2,7 @@
 """a script that reads stdin line by line and computes metrics"""
 from sys import stdin
 
+
 def print_status_codes(status_counts, total_file_size):
     """Prints the status code with its count.
     Format:
