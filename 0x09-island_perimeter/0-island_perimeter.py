@@ -3,11 +3,12 @@
 
 
 def island_perimeter(grid):
+    """Method Island perimeter"""
     L1 = len(grid)  # The row (Height)
     L2 = len(grid[0])  # The column (Width)
 
     def dfs(row, col):
-        # Check the water bound area
+        """ Check the water bound area """
         if row < 0 or row >= L1 or col < 0 or col >= L2 or grid[row][col] == 0:
             return 1
 
